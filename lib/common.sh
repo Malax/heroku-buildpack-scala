@@ -314,8 +314,10 @@ cache_copy() {
   to_dir=$3
   rm -rf $to_dir/$rel_dir
   if [ -d $from_dir/$rel_dir ]; then
+    echo "COPY $from_dir/$rel_dir/. $to_dir/$rel_dir"
+
     mkdir -p $to_dir/$rel_dir
-    cp -pr $from_dir/$rel_dir/. $to_dir/$rel_dir
+    cp -pvr $from_dir/$rel_dir/. $to_dir/$rel_dir
   fi
 }
 

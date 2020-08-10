@@ -20,6 +20,11 @@ APP_BUILD_DIR=$(cd $1; pwd)
 CACHE_DIR=$2
 ENV_DIR=$3
 
+echo "CACHE DIR: $CACHE_DIR"
+echo "==========================================================="
+ls "$CACHE_DIR"
+echo "==========================================================="
+
 source <(curl --retry 3 -fsSL $BUILDPACK_STDLIB_URL)
 
 if [ -z "${CNB_STACK_ID:-}" ]; then
